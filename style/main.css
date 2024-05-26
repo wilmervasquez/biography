@@ -1,5 +1,95 @@
-header{
+
+*::selection {
+  background-color: rgba(255, 136, 0, 0.116);
+  color: rgb(190, 130, 0);
+}
+
+:root{
+  --r: 20;
+
+}
+.line{
+  height: 3px;
+  background: hsl(var(--r), 100%, 65%);
+  margin: 0 auto;
+  width: 150px;
+}
+body{
+  background-image: linear-gradient(0deg,hsl(var(--r), 100%, 90%),white) ;
+  background-attachment: fixed;
+}
+
+h1{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0;
+  margin-top: 30px ;
+  justify-content: center;
+  font-size: clamp(2rem,calc(1rem + 3.5vw),6rem);
+  user-select: none;
+  text-align: center;
+  /* text-decoration: underline; */
+
+}
+/* @keyframes change-color{
+  0%{
+    --r:12;
+  }
+  50%{
+    --r:34
+  }
+  100%{
+    --r: 12;
+  }
+} */
+.char{
+  color: hsl(var(--r), 100%, 60%);
+  font-weight: 300;
+
+  transition: font-weight 0.5s ease;
+  /* animation: 2s change-color infinite linear; */
+}
+
+.char:hover{
+  color: hsl(var(--r), 100%, 45%);
+  font-weight: 900;
+}
+/* left */
+span:has(+ .char:hover){
+  font-weight: 700;
+  color:hsl(var(--r),100%,50%);
+}
+span:has(+ span + span:hover){
+  color:hsl(var(--r),100%,55%);
+  font-weight: 500;
+
+}
+/* right */
+span:hover + span{
+  font-weight: 700;
+
+  color:hsl(var(--r),100%,50%);
+
+}
+span:hover + span + span{
+  font-weight: 500;
+  color:hsl(var(--r),100%, 55%);
+
+
+}
+
+
+
+p {
+  font-weight: 500;
+}
+h1, h2, h3{
+  font-weight: 900;
+}
+.root{
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+a {
+  color: rgb(8, 119, 163);
 }
