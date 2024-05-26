@@ -1,12 +1,17 @@
-
+* {
+  font-family: serif;
+}
 *::selection {
   background-color: rgba(255, 136, 0, 0.116);
   color: rgb(190, 130, 0);
 }
 
 :root{
-  --r: 20;
+  --r: 200;
 
+}
+.root {
+  padding: 0 30px;
 }
 .line{
   height: 3px;
@@ -15,7 +20,7 @@
   width: 150px;
 }
 body{
-  background-image: linear-gradient(0deg,hsl(var(--r), 100%, 90%),white) ;
+  background-image: linear-gradient(180deg,hsl(var(--r), 100%, 90%),white) ;
   background-attachment: fixed;
 }
 
@@ -30,6 +35,12 @@ h1{
   /* text-decoration: underline; */
 
 }
+h2 {
+  color: rgb(46, 46, 46);
+}
+b {
+  color: #338bfe;
+}
 /* @keyframes change-color{
   0%{
     --r:12;
@@ -43,7 +54,7 @@ h1{
 } */
 .char{
   color: hsl(var(--r), 100%, 60%);
-  font-weight: 300;
+  font-weight: 600;
 
   transition: font-weight 0.5s ease;
   /* animation: 2s change-color infinite linear; */
@@ -55,23 +66,23 @@ h1{
 }
 /* left */
 span:has(+ .char:hover){
-  font-weight: 700;
+  font-weight: 800;
   color:hsl(var(--r),100%,50%);
 }
 span:has(+ span + span:hover){
   color:hsl(var(--r),100%,55%);
-  font-weight: 500;
+  font-weight: 700;
 
 }
 /* right */
 span:hover + span{
-  font-weight: 700;
+  font-weight: 800;
 
   color:hsl(var(--r),100%,50%);
 
 }
 span:hover + span + span{
-  font-weight: 500;
+  font-weight: 700;
   color:hsl(var(--r),100%, 55%);
 
 
