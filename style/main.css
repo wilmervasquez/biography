@@ -1,22 +1,20 @@
-* {
-  font-family: inherit;
-  padding: 0;
+.menu {
+  justify-content: center;
+  display: flex;
+  padding: 20px ;
 }
-*::selection {
-  background-color: hsla(370, 100%, 50%, 0.116);
-  color: hsl(370, 100%, 37%);
+.menu a {
+  font-weight: 800;
+  background-color: none;
+  color: blue;
 }
-
-:root{
-  --r: 370;
-
-}
-li {
-  list-style: none;
-}
-
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
   font-family: Salsa;
+  animation: show-title 0.5s ease;
+
 }
 
 h2 svg {
@@ -27,33 +25,69 @@ h2 svg {
 .root {
   padding: 0 30px;
 }
-.line{
+.line {
   height: 3px;
   background: hsl(var(--r), 100%, 65%);
   margin: 0 auto;
   width: 150px;
 }
-body{
-  background-image: linear-gradient(180deg,hsl(var(--r), 100%, 90%),white) ;
+body {
+  background-image: linear-gradient(180deg, 
+    hsl(182, 100%, 80%),
+    hsl(268, 100%, 90%),
+    white
+  );
+  /* background-image: url(https://static.vecteezy.com/system/resources/previews/006/822/761/non_2x/seamless-texture-with-floral-background-pattern-from-flowers-botanical-composition-wallpaper-vector.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
+  background-blend-mode: screen;
 }
+.screen{
+  height: 100vh;
+}
+h1 {
 
-h1{
-  display: flex;
-  margin: 0;
-  margin-top: 30px ;
-  justify-content: center;
-  font-size: clamp(2rem,calc(1rem + 3.5vw),6rem);
+  font-size: clamp(2rem, calc(2rem + 3.5vw), 3rem);
   user-select: none;
-  text-align: center;
-  /* text-decoration: underline; */
+ 
+  animation: show-title 0.5s ease;
 
+  background-image: url(https://t4.ftcdn.net/jpg/02/67/40/21/240_F_267402109_jZvsqRQUvSxohAOmcUt549jlapqoRHM0.jpg);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-top: 30px;
+}
+.foto {
+  width: 300px;
+  aspect-ratio: 1;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+  border-radius: 50%;
+}
+p {
+  animation: show 0.5s ease alternate;
+  font-family: Dancing Script;
 }
 h2 {
   color: rgb(46, 46, 46);
+  background-color: rgba(137, 255, 121, 0.205);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  color: rgb(0, 102, 128);
+  font-size: clamp(1rem, calc(1rem + 1.7vw), 3rem);
+
 }
 b {
-  color: #FF5533;
+  color: hsl(var(--r), 100%, 60%);
 }
 /* @keyframes change-color{
   0%{
@@ -66,103 +100,74 @@ b {
     --r: 12;
   }
 } */
-.char{
-  color: hsl(var(--r), 100%, 60%);
-  font-weight: 600;
-
-  transition: font-weight 0.5s ease;
-  /* animation: 2s change-color infinite linear; */
-}
-
-.char:hover{
-  color: hsl(var(--r), 100%, 45%);
-  font-weight: 900;
-}
-/* left */
-span:has(+ .char:hover){
-  font-weight: 800;
-  color:hsl(var(--r),100%,50%);
-}
-span:has(+ span + span:hover){
-  color:hsl(var(--r),100%,55%);
-  font-weight: 700;
-
-}
-/* right */
-span:hover + span{
-  font-weight: 800;
-
-  color:hsl(var(--r),100%,50%);
-
-}
-span:hover + span + span{
-  font-weight: 700;
-  color:hsl(var(--r),100%, 55%);
 
 
-}
-@keyframes show {
-  from {
-    scale: 0.2;
-    opacity: 0;
-  }
-  to {
-    scale: 1;
-    opacity: 1;
-  }
-}
-.root>*{
+section {
   width: 100%;
   height: auto;
-  view-timeline-name: --image;
-  view-timeline-axis: block;
   border-radius: 20px;
 
+  view-timeline-name: --image;
+  view-timeline-axis: block;
   animation-timeline: --image;
   animation-name: show;
-
   animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+
+  box-shadow: 0 2px 6px  rgba(0, 0, 0, 0.219);
 }
-a{
+.g-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  gap: 20px;
+}
+a {
   text-decoration: none;
   color: blueviolet;
 }
 a > svg {
-  vertical-align: text-bottom ;
+  vertical-align: text-bottom;
   height: 1.3em;
   width: 1.3em;
   margin-right: 5px;
 }
 img {
-  aspect-ratio: 3 / 1;
   object-fit: cover;
+  w
 }
 p {
-  font-weight: 500;
+  /* font-weight: 800; */
+  font-size: 17px;
   font-family: Poppins;
 }
-h1, h2, h3{
-  font-weight: 900;
+img {
+  border-radius: 30px;
 }
-.root{
+.root {
   margin: 0 auto;
   max-width: 800px;
 }
 
 a {
-  color: #FF5533;
+  color: hsl(270, 100%, 50%);
 }
 ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding-left: 20px;
 }
-li > a{
+.contacts a {
   display: block;
-  background-color: #ffe6e0;
+  background-color: #ffffff6c;
   padding: 10px 20px 10px 10px;
   border-radius: 12px;
 }
-p{
-  padding-left: 25px;
+
+
+footer {
+  padding: 10px;
 }

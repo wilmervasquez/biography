@@ -1,0 +1,24 @@
+@keyframes show-title {
+  from {
+    scale: 0.5;
+    opacity: 0;
+    transform: translate(0,-100%);
+  }
+  to {
+    scale: 1;
+    transform: translate(0,0);
+
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    scale: 0.5;
+    opacity: 0.5;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
